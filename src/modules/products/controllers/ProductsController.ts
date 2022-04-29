@@ -1,12 +1,14 @@
 import { Request, Response } from 'express';
-import CerateProductService from '../Services/CreateProductService';
+import CreateProductService from '../Services/CreateProductService';
 import DeleteProductService from '../Services/DeleteProductService';
 import ListProductService from '../Services/ListProductService';
 import ShowProductService from '../Services/ShowProductService';
 import UpdateProductService from '../Services/UpdateProductService';
+
 export default class ProductsController {
     public async index(request: Request, response: Response) {
         const listProducts = new ListProductService();
+
         const products = await listProducts.execute();
 
         return response.json(products);
@@ -25,7 +27,7 @@ export default class ProductsController {
     public async create(request: Request, response: Response) {
         const { name, price, quantity } = request.body;
 
-        const createProduct = new CerateProductService();
+        const createProduct = new CreateProductService();
 
         const product = await createProduct.execute({
             name,
@@ -35,6 +37,7 @@ export default class ProductsController {
 
         return response.json(product);
     }
+
     public async update(request: Request, response: Response) {
         const { name, price, quantity } = request.body;
         const { id } = request.params;
@@ -47,12 +50,15 @@ export default class ProductsController {
             price,
             quantity,
         });
+
         return response.json(product);
     }
+
     public async delete(request: Request, response: Response) {
         const { id } = request.params;
 
         const deleteProduct = new DeleteProductService();
+
         await deleteProduct.execute({ id });
 
         return response.json([]);

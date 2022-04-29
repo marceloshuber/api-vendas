@@ -9,7 +9,7 @@ interface IRequest {
     quantity: number;
 }
 
-class CerateProductService {
+class CreateProductService {
     public async execute({
         name,
         price,
@@ -34,4 +34,4 @@ class CerateProductService {
     }
 }
 
-export default CerateProductService;
+export default CreateProductService;

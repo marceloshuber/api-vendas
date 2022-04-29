@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\marce\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js dev
+  C:\Program Files\nodejs\node.exe C:\Users\marce\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add bcrypt.ts
 
 PATH: 
-  C:\Python310\Scripts\;C:\Python310\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.13\binX;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\composer;;C:\Program Files\Microsoft VS Code\bin;C:\ProgramData\chocolatey\bin;;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\marce\scoop\shims;C:\Users\marce\AppData\Local\Microsoft\WindowsApps;C:\Users\marce\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\marce\AppData\Local\GitHubDesktop\bin;C:\src\flutter\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1\bin;C:\xampp\php;C:\Users\marce\AppData\Roaming\Composer\vendor\bin;C:\Users\marce\AppData\Roaming\npm
+  C:\Python310\Scripts\;C:\Python310\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.13\binX;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\composer;;C:\Program Files\Microsoft VS Code\bin;C:\ProgramData\chocolatey\bin;;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\dotnet\;C:\Users\marce\scoop\shims;C:\Users\marce\AppData\Local\Microsoft\WindowsApps;C:\Users\marce\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\marce\AppData\Local\GitHubDesktop\bin;C:\src\flutter\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1\bin;C:\xampp\php;C:\Users\marce\AppData\Roaming\Composer\vendor\bin;C:\Users\marce\AppData\Roaming\npm
 
 Yarn version: 
   1.22.18
@@ -14,15 +14,57 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\marce\AndroidStudioProjects\www\api-vendas\package.json: Unexpected end of JSON input
-      at JSON.parse (<anonymous>)
-      at C:\Users\marce\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Users\marce\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
-      at C:\Users\marce\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+  Error: https://registry.yarnpkg.com/bcrypt.ts: Not found
+      at Request.params.callback [as _callback] (C:\Users\marce\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66138:18)
+      at Request.self.callback (C:\Users\marce\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
+      at Request.emit (node:events:526:28)
+      at Request.<anonymous> (C:\Users\marce\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141855:10)
+      at Request.emit (node:events:526:28)
+      at IncomingMessage.<anonymous> (C:\Users\marce\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141777:12)
+      at Object.onceWrapper (node:events:645:28)
+      at IncomingMessage.emit (node:events:538:35)
+      at endReadableNT (node:internal/streams/readable:1345:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
 npm manifest: 
-  
+  {
+    "name": "api-vendas",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
+      "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
+      "lint": "eslint . --ext .ts",
+      "lint-fix": "eslint . --ext .ts --fix",
+      "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
+    },
+    "devDependencies": {
+      "@types/bcrypt": "^5.0.0",
+      "@types/cors": "^2.8.12",
+      "@types/express": "^4.17.13",
+      "@types/joi": "^17.2.3",
+      "@types/node": "^17.0.23",
+      "@typescript-eslint/eslint-plugin": "^5.16.0",
+      "@typescript-eslint/parser": "^5.16.0",
+      "eslint": "^8.11.0",
+      "eslint-config-prettier": "6.15.0",
+      "eslint-plugin-prettier": "3.2.0",
+      "prettier": "^2.6.1",
+      "ts-node-dev": "^1.1.8",
+      "tsconfig-paths": "^3.14.1",
+      "typescript": "^4.6.2"
+    },
+    "dependencies": {
+      "celebrate": "^15.0.1",
+      "cors": "^2.8.5",
+      "express": "^4.17.3",
+      "express-async-errors": "^3.1.1",
+      "pg": "^8.7.3",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "0.2.29"
+    }
+  }
 
 yarn manifest: 
   No manifest
@@ -46,6 +88,18 @@ Lockfile:
       js-yaml "^4.1.0"
       minimatch "^3.0.4"
       strip-json-comments "^3.1.1"
+  
+  "@hapi/hoek@^9.0.0":
+    version "9.2.1"
+    resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.1.tgz#9551142a1980503752536b5050fd99f4a7f13b17"
+    integrity sha512-gfta+H8aziZsm8pZa0vj04KO6biEiisppNgA1kbJvFrrWu9Vm7eaUEy76DIxsuTaWvti5fkJVhllWc6ZTE+Mdw==
+  
+  "@hapi/topo@^5.0.0":
+    version "5.1.0"
+    resolved "https://registry.yarnpkg.com/@hapi/topo/-/topo-5.1.0.tgz#dc448e332c6c6e37a4dc02fd84ba8d44b9afb012"
+    integrity sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==
+    dependencies:
+      "@hapi/hoek" "^9.0.0"
   
   "@humanwhocodes/config-array@^0.9.2":
     version "0.9.5"
@@ -82,10 +136,34 @@ Lockfile:
       "@nodelib/fs.scandir" "2.1.5"
       fastq "^1.6.0"
   
+  "@sideway/address@^4.1.3":
+    version "4.1.4"
+    resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.4.tgz#03dccebc6ea47fdc226f7d3d1ad512955d4783f0"
+    integrity sha512-7vwq+rOHVWjyXxVlR76Agnvhy8I9rpzjosTESvmhNeXOXdZZB15Fl+TI9x1SiHZH5Jv2wTGduSxFDIaq0m3DUw==
+    dependencies:
+      "@hapi/hoek" "^9.0.0"
+  
+  "@sideway/formula@^3.0.0":
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/@sideway/formula/-/formula-3.0.0.tgz#fe158aee32e6bd5de85044be615bc08478a0a13c"
+    integrity sha512-vHe7wZ4NOXVfkoRb8T5otiENVlT7a3IAiw7H5M2+GO+9CDgcVUUsX1zalAztCmwyOr2RUTGJdgB+ZvSVqmdHmg==
+  
+  "@sideway/pinpoint@^2.0.0":
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
+    integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
+  
   "@sqltools/formatter@1.2.2":
     version "1.2.2"
     resolved "https://registry.yarnpkg.com/@sqltools/formatter/-/formatter-1.2.2.tgz#9390a8127c0dcba61ebd7fdcc748655e191bdd68"
     integrity sha512-/5O7Fq6Vnv8L6ucmPjaWbVG1XkP4FO+w5glqfkIsq3Xw4oyNAdJddbnYodNDAfjVUvo/rrSCTom4kAND7T1o5Q==
+  
+  "@types/bcrypt@^5.0.0":
+    version "5.0.0"
+    resolved "https://registry.yarnpkg.com/@types/bcrypt/-/bcrypt-5.0.0.tgz#a835afa2882d165aff5690893db314eaa98b9f20"
+    integrity sha512-agtcFKaruL8TmcvqbndlqHPSJgsolhf/qPWchFlgnW1gECTN/nKbFcoFnvKAQRFfKbh+BO6A3SWdJu9t+xF3Lw==
+    dependencies:
+      "@types/node" "*"
   
   "@types/body-parser@*":
     version "1.19.2"
@@ -125,6 +203,13 @@ Lockfile:
       "@types/express-serve-static-core" "^4.17.18"
       "@types/qs" "*"
       "@types/serve-static" "*"
+  
+  "@types/joi@^17.2.3":
+    version "17.2.3"
+    resolved "https://registry.yarnpkg.com/@types/joi/-/joi-17.2.3.tgz#b7768ed9d84f1ebd393328b9f97c1cf3d2b94798"
+    integrity sha512-dGjs/lhrWOa+eO0HwgxCSnDm5eMGCsXuvLglMghJq32F6q5LyyNuXb41DHzrg501CKNOSSAHmfB7FDGeUnDmzw==
+    dependencies:
+      joi "*"
   
   "@types/json-schema@^7.0.9":
     version "7.0.10"
@@ -423,6 +508,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/callsites/-/callsites-3.1.0.tgz#b3630abd8943432f54b3f0519238e33cd7df2f73"
     integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
   
+  celebrate@^15.0.1:
+    version "15.0.1"
+    resolved "https://registry.yarnpkg.com/celebrate/-/celebrate-15.0.1.tgz#767fa6268f7446b473ea69cd6326ce4dffee4d1e"
+    integrity sha512-K2y221k10u+K2t9w25802qXh8h1mVWZf+6pl7zHdlhhwzrOSQFnnw+GsR8k17oyn4Y3fVErBGsO/+CeW8N7aRQ==
+    dependencies:
+      escape-html "1.0.3"
+      joi "17.x.x"
+      lodash "4.17.x"
+  
   chalk@^1.1.1:
     version "1.1.3"
     resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -619,7 +713,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
     integrity sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==
   
-  escape-html@~1.0.3:
+  escape-html@1.0.3, escape-html@~1.0.3:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
     integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
@@ -1103,6 +1197,17 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
     integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
   
+  joi@*, joi@17.x.x:
+    version "17.6.0"
+    resolved "https://registry.yarnpkg.com/joi/-/joi-17.6.0.tgz#0bb54f2f006c09a96e75ce687957bd04290054b2"
+    integrity sha512-OX5dG6DTbcr/kbMFj0KGYxuew69HPcAE3K/sZpEV2nP6e/j/C0HV+HNiBPCASxdx5T7DMoa0s8UeHWMnb6n2zw==
+    dependencies:
+      "@hapi/hoek" "^9.0.0"
+      "@hapi/topo" "^5.0.0"
+      "@sideway/address" "^4.1.3"
+      "@sideway/formula" "^3.0.0"
+      "@sideway/pinpoint" "^2.0.0"
+  
   js-yaml@^3.14.0:
     version "3.14.1"
     resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.1.tgz#dae812fdb3825fa306609a8717383c50c36a0537"
@@ -1147,6 +1252,11 @@ Lockfile:
     version "4.6.2"
     resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
     integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+  
+  lodash@4.17.x:
+    version "4.17.21"
+    resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+    integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
   
   lru-cache@^6.0.0:
     version "6.0.0"
