@@ -20,7 +20,7 @@ class UpdateUserAvatarService {
         if (!user) {
             throw new AppError('User not found');
         }
-
+        console.log(' Caminho = ' + uploadConfig.directory + ' ' + user.avatar);
         if (user.avatar) {
             const userAvatarFilePath = path.join(
                 uploadConfig.directory,
