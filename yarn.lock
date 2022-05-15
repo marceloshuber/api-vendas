@@ -1315,6 +1315,11 @@ isexe@^2.0.0:
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
 
+joi-translation-pt-br@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/joi-translation-pt-br/-/joi-translation-pt-br-0.0.6.tgz#c7d8f83880aebf09e7815f1995aee9e79548ed9e"
+  integrity sha512-S4/17inQ9HR5vYqb02x8AxDxAkVMrJBKdqTJ5FWw5FW4ZKgl42mE7kExtXsEIjHPFsRIz5KHAcMQaGWm6fbMew==
+
 joi@*, joi@17.x.x:
   version "17.6.0"
   resolved "https://registry.yarnpkg.com/joi/-/joi-17.6.0.tgz#0bb54f2f006c09a96e75ce687957bd04290054b2"
